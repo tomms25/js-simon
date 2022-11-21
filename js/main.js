@@ -6,15 +6,15 @@ function randomNumber(min,max){
 }
 
 function enterNumber(num, array){
-    for (var i = 0; i < num; i++){
-        var userChoice = parseInt(prompt("Inserisci un numero!"));
+    for (let i = 0; i < num; i++){
+        let userChoice = parseInt(prompt("Inserisci un numero!"));
         array.push(userChoice);
     }
     return userNumbers;
 }
 
 function elementInArray(element, array){
-    for (var i = 0; i < array.length; i++){
+    for (let i = 0; i < array.length; i++){
         if (element == array[i]){
             return true;
         }
@@ -22,12 +22,12 @@ function elementInArray(element, array){
     return false;
 }
 
-var randomNumbers = [];
-var score = [];
-var userNumbers = [];
+let randomNumbers = [];
+let score = [];
+let userNumbers = [];
 
-for (var i = 0; i < 5; i++){
-    var casualNumbers = randomNumber(1,100);
+for (let i = 0; i < 5; i++){
+    let casualNumbers = randomNumber(1,100);
     randomNumbers.push(casualNumbers);
 }
 
@@ -39,7 +39,7 @@ setTimeout(function() {
     enterNumber(5, userNumbers);
 
     // Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati.
-    for (var i = 0; i<userNumbers.length; i++) {
+    for (let i = 0; i<userNumbers.length; i++) {
         if (elementInArray(userNumbers[i], randomNumbers)) {
             score.push(userNumbers[i]);
         }
